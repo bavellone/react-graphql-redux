@@ -63,7 +63,7 @@ const query = ( mapPropsToQuery, mapPropsToVariables = () => ( {} ) ) => ( Wrapp
 			this.cancelRequestPromise = cancelablePromise.cancel;
 			cancelablePromise.promise
 				.then( results => {
-					this.setState( results );
+					this.setState( {...results, loading: !!results.data} );
 					this.cancelRequestPromise = false;
 				} )
 				.catch( () => {} ); // avoid console warnings
