@@ -12,7 +12,8 @@ const query = ( mapPropsToQuery, mapPropsToVariables = () => ( {} ) ) => ( Wrapp
 	return class GraphQueryComponent extends Component {
 		state = {
 			data: null,
-			errors: null
+			errors: null,
+			loading: true,
 		};
 
 		uid = uniqueId();
@@ -63,7 +64,7 @@ const query = ( mapPropsToQuery, mapPropsToVariables = () => ( {} ) ) => ( Wrapp
 			this.cancelRequestPromise = cancelablePromise.cancel;
 			cancelablePromise.promise
 				.then( results => {
-					this.setState( {...results, loading: !!results.data} );
+					this.setState( {...results, loading: !results.data} );
 					this.cancelRequestPromise = false;
 				} )
 				.catch( () => {} ); // avoid console warnings
