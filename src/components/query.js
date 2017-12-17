@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { isString, uniqueId, throttle } from 'lodash';
 import { graphql } from 'graphql';
 import { quickGraphql, parse } from '../quick-graphql';

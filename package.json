@@ -45,7 +45,8 @@
   "peerDependencies": {
     "graphql": "^0.8.2",
     "graphiql": "^0.8.1",
-    "react": "^0.14.0 || ^15.0.0-0",
+    "react": "^16.0.0-0",
+    "prop-types": "^15.6.0",
     "react-dom": "^15.4.1",
     "redux": "^2.0.0 || ^3.0.0"
   },
