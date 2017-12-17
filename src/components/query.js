@@ -79,7 +79,7 @@ const query = ( mapPropsToQuery, mapPropsToVariables = () => ( {} ) ) => ( Wrapp
 
 		render() {
 			return (
-				<WrappedComponent { ...this.props } { ...this.state } />
+				<WrappedComponent { ...this.props } query={ this.state } />
 			);
 		}
 	};
