@@ -72,10 +72,10 @@ const query = ( mapPropsToQuery, mapPropsToVariables = () => ( {} ) ) => ( Wrapp
 
 		triggerGraphRequest() {
 			if ( process.env.NODE_ENV === 'development' ) {
-				return graphql( this.context.graph.schema, this.query, this.context.graph.root, { uid: this.uid }, this.variables );
+				return graphql( this.context.graph.schema, this.query, this.context.graph.root, { uid: this.uid, store: this.context.graph.store }, this.variables );
 			}
 
-			return quickGraphql( this.parsedQuery, this.context.graph.root, { uid: this.uid } );
+			return quickGraphql( this.parsedQuery, this.context.graph.root, { uid: this.uid, store: this.context.graph.store } );
 		}
 
 		render() {
